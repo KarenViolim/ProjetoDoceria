@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-  <meta charset=UTF-8>
-
-  <title>Karen Candy's</title>
-  <link rel="shortcut icon" type="image/x-icon" href="images/Slogan.jpeg" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="stylesheet" href="./css/jquery.slide.css" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-  <link rel="stylesheet" type="text/css" href="plugins/revo-slider/css/settings.css">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Karen Candy's</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/Slogan.jpeg" />
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="plugins/revo-slider/css/settings.css">
 <link rel="stylesheet" type="text/css" href="plugins/revo-slider/css/layers.css">
 <link rel="stylesheet" type="text/css" href="plugins/revo-slider/css/navigation.css">
 <link rel="stylesheet" type="text/css" href="plugins/revo-slider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
@@ -32,13 +25,42 @@
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 
-
 <link rel="stylesheet" type="text/css" href="css/colors/light-green.css" title="light-green">
-<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script>
-<link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/>
-</head>
 
-<body>
+    <!-- Importação do jQuery -->
+    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><script src="js/jquery-3.3.1.js"> </script>
+
+    <!-- Todo Javascript é utilizado dentro da tag script -->
+    <script>
+      // Tudo aqui é considerado Javascript
+      $(document).ready(function(){
+        // alert("Tudo beleza!");
+        // Evento de click no elemento aba1
+        $("#produto").click(function(){
+          // Tudo que deve ser feito ao clicar no aba1
+          // Esconder o p2 e p3
+          $("#p2").hide();
+          // Mostrar o p1
+          $("#p1").fadeIn();
+        }); // Fim do evento click do aba1
+        // Evento de click no elemento aba1
+        $("#agenda").click(function(){
+          // Tudo que deve ser feito ao clicar no aba1
+          // Esconder o p2 e p3
+          $("#p1").hide();
+          // Mostrar o p1
+          $("#p2").fadeIn(1500);
+        }); // Fim do evento click do aba1
+      });
+    </script>
+
+    <style media="screen">
+    #p1, #p2{
+      display: none;
+    }
+  </style>
+  </head>
+  <body>
     <header class="navigation navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -50,6 +72,7 @@
         <nav class="collapse navbar-collapse navbar-right">
             <ul id="nav" class="nav navbar-nav menu">
                 <li><a href="encomendas">Encomendas</a></li>
+                <!-- <li><a href="encomendas.php">Encomendas</a></li> -->
                 <li><a href="admin">Minha área</a></li>
             </ul>
         </nav>
@@ -60,7 +83,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Página Inicial</h2>
+                    <h2>Minha Área</h2>
                     <ol class="breadcrumb header-bradcrumb">
                         <li><a href="index">Home</a></li>
                         <li class="active">Fotos</li>
@@ -68,94 +91,56 @@
                 </div>
             </div>
         </div>
-    </section>
+      </section>
 
-            <div class="col-md-12 text-center">
-                <div class="title">
-                    <h2>FOTOS</h2></div>
-            </div>
-<style>
-.slide {display:none;}
-</style>
-<div class="w3-content w3-display-container">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/6194/4HH4S9.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img921/6361/tWeQCp.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/4954/yevmEA.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/9333/TH1UD7.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/8258/X6jmCa.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img923/7439/WmRDYR.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/3650/JpJvc4.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img922/4677/X5mSAb.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img921/6285/zX4G7X.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img922/7601/tDzAk0.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/2443/xj4eEB.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/6572/DavEP5.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img922/3954/36C7s3.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img921/6137/hr2kv8.jpg">
-  <img class="slide" src="https://imagizer.imageshack.com/img924/4245/YHtbHg.jpg">
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-</div>
+      <script>
+        function msg() {
+            alert("Produto Cadastrado!");
+          }
+      </script>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
+      <script>
+        function msg1() {
+            alert("Data inserida com sucesso!");
+          }
+      </script>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+        <div class="col-md-12 text-center">
+            <div class="title">
+                <h2>Clique na opção desejada:</h2></div>
+                <div class="item text-center">
+                <button href="#" id="produto" class="btn btn-main mt-20" type="submit" required>Cadastrar Produto</button>
+                <button href="#" id="agenda" class="btn btn-main mt-20" type="submit" required>Minha Agenda</button></div>
+                <!-- <a href="#" id="produto">Cadastrar Produto</a>
+                <a href="#" id="agenda">Minha Agenda</a> -->
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slide");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
+                <!-- <p id="p1">IFPR Campus Paranavaí</p> -->
+                <section class="about-2 section" id="about">
+                  <div class="login">
+                      <form action="#" method="post" id = "p1">
+                        <label for="">Nome do Produto:</label><br>
+                        <input class="obrigatorio campo" type="text" placeholder="Nome" name="produto" value="" required><br>
+                        <label for="">Quantidade Mínima Produzida:</label><br>
+                        <input class="obrigatorio campo" type="text" placeholder="Quantidade mínima" name="qtdmin" value="" required><br>
+                        <label for="">Tempo de Produção:</label><br>
+                        <input class="obrigatorio campo" type="text" placeholder="Tempo de produção" name="tempoprod" value="" required><br>
+                        <label for="">Preço de Venda:</label><br>
+                        <input class="obrigatorio campo" type="text" placeholder="Preço de Venda" name="preco" value="" required><br>
+                        <button onclick="msg()" class="btn btn-main mt-20" type="submit">Cadastrar</button>
+                        <!-- <button class="btn btn-main mt-20" type="submit" required>Cadastrar</button> -->
+                      </form>
 
-<div class="container">
-    	<div class="row">
-    		<div class="col-md-12 text-center">
-    			<div class="title">
-    			    <h2>SOBRE NÓS</h2></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="testimonial section" id="testimonial">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="item text-center">
-                        <i class="tf-ion-chatbubbles"></i>
-                        <div class="client-details">
-                            <p>"A Karen Candy's tem realizado diversas encomendas para quaisquer ocasiões, gerando um alto grau de satisfação com os clientes
-                            e atingindo cada vez mais o sucesso. Nosso lema é "Produzir com amor e se importar com o valor." Faça seu orçamento
-                            sem compromisso."</p>
-                            </div>
-                            <div class="client-thumb">
-                                <img src="images/karen.jpeg" class="img-responsive" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Karen Cristina Violim</h3>
-                                <span>Dona da Doceria.</span>
-                            </div>
-                        </div>
+                      <form action="#" method="post" id = "p2">
+                        <label for="">Data Livre:</label><br>
+                        <input class="obrigatorio campo" type="date" placeholder="" name="data" value="" required><br>
+                        <label for="">Tempo Livre:</label><br>
+                        <input class="obrigatorio campo" type="time" placeholder="" name="tempo" value="" required><br>
+                        <button onclick="msg1()" class="btn btn-main mt-20" type="submit">Cadastrar</button>
+                      </form>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <footer id="footer" class="bg-one">
-  <div class="footer-bottom">
-    <h5>Desenvolvido por Karen Cristina Violim. <br> Todos os direitos reservados.</h5>
-  </div>
-</footer>
-</body>
+                </section>
+
+                <!-- <p id="p2">Tecnologias Web</p> <br><br><br> -->
 
 <script src="plugins/jquery/dist/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -234,4 +219,10 @@ function showDivs(n) {
         });
     });
 </script>
+<footer id="footer" class="bg-one">
+  <div class="footer-bottom">
+    <h5>Desenvolvido por Karen Cristina Violim. <br> Todos os direitos reservados.</h5>
+  </div>
+</footer>
+</body>
 </html>
