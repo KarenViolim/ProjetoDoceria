@@ -4,17 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Cliente extends Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
 	@Column(nullable = false, length = 12)
 	@NotEmpty(message = "O RG é obrigatório")
 	private String rg;
@@ -27,15 +21,6 @@ public class Cliente extends Pessoa implements Serializable{
 	@Column(nullable = false, length = 80)
 	@NotEmpty(message = "O endereço é obrigatório")
 	private String endereco;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getRg() {
-		return rg;
-	}
 	public void setRg(String rg) {
 		this.rg = rg;
 	}

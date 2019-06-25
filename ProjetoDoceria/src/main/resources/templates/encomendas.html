@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="br" class="no-js">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Karen Candy's</title>
@@ -68,13 +69,18 @@
         <div class="login">
             <h3>Antes de prosseguir para a encomenda, preciso saber <br> um pouco de você. Faça seu cadastro rápido e prático.</h3><br>
 
-            <form action="./encomendas" method="post">
-                <label for="">Nome:</label><br>
-                <input class="obrigatorio campo" type="text" placeholder="Nome Completo" name="usuario" value="" required><br>
-                <label for="">RG:</label><br>
-                <input class="obrigatorio campo" type="text" placeholder="Digite seu RG" name="rg" value="" required><br>
-                <label for="">CPF:</label><br>
-                <input class="obrigatorio campo" type="text" placeholder="Digite seu CPF" name="cpf" value="" required><br>
+            <form class="form-horizontal" th:action="@{/salvarEncomenda}" method="Post" th:object="${cliente}">
+				<div th:if="${#fields.hasAnyErrors()}">
+				<div th:each="detailedError : ${#fields.detailedErrors()}">
+					<span th:text="${detailedError.message}"></span>
+				</div>
+				</div>
+                <label>Nome:</label><br>
+                <input th:field="*{nome}" class="obrigatorio campo" type="text" required><br>
+                <label>RG:</label><br>
+                <input th:field="*{rg}" class="obrigatorio campo" type="text" required><br>
+                <label>CPF:</label><br>
+                <input th:field="*{cpf}" class="obrigatorio campo" type="text" required><br>
                 <script>
 
                 function mascara(t, mask){
@@ -88,34 +94,23 @@
                 </script>
 
                 <label>Telefone</label><br>
-                <input class="obrigatorio campo" type="text" placeholder="Telefone com DDD" name="telefone" onkeypress="mascara(this, '## #####-####')" maxlength="13" required> <br>
-                <label for="">E-mail:</label><br>
-                <input class="obrigatorio campo" type="text" placeholder="Seu email" name="email" value="" required><br>
+                <input th:field="*{telefone}" class="obrigatorio campo" type="text" onkeypress="mascara(this, '## #####-####')" maxlength="13" required> <br>
+                <label>Endereço:</label><br>
+                <input th:field="*{endereco}" class="obrigatorio campo" type="text" required><br>
 
                 <label>Cidade</label><br>
-                <select class="obrigatorio campo" name="cidade" required>
-                    <option value="">Selecione sua cidade atual:</option>
-                    <option value="1">Nova Londrina</option>
-                    <option value="2">Marilena</option>
-                    <option value="3">Itaúna</option>
-                    <option value="4">Mairiporã</option>
-                    <option value="5">São Paulo</option>
-                    <option value="6">Primavera</option>
-                    <option value="7">Rio de Janeiro</option>
-                    <option value="8">Campo Grande</option>
-                    <option value="9">Blumenau</option>
-                    <option value="10">Joinville</option>
-                </select> <br><br>
+                <select th:field="*{cidade}" class="obrigatorio campo" required>
+				<option value="0">Selecione uma Cidade</option>
+				<option th:each="cid: ${cidade}"
+					th:value="${cid.id}" th:text="${cid.nome}"></option>
+				</select><br><br>
 
                 <label>Estado</label><br>
-                <select class="obrigatorio campo" name="estado" required>
-                    <option value="">Selecione seu estado:</option>
-                    <option value="1">Paraná</option>
-                    <option value="2">São Paulo</option>
-                    <option value="3">Rio de Janeiro</option>
-                    <option value="4">Mato Grosso do Sul</option>
-                    <option value="5">Santa Catarina</option>
-                </select> <br><br>
+                <select th:field="*{cidade}" class="obrigatorio campo" required>
+                <option value="0">Selecione um Estado</option>
+				<option th:each="est: ${estado}"
+					th:value="${est.id}" th:text="${est.nome}"></option>
+				</select><br><br>
 
                 <button class="btn btn-main mt-20" type="submit">Finalizar cadastro</button>
                 <div class="aviso"></div>
