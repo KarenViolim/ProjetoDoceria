@@ -69,7 +69,7 @@
         <div class="login">
             <h3>Antes de prosseguir para a encomenda, preciso saber <br> um pouco de você. Faça seu cadastro rápido e prático.</h3><br>
 
-            <form class="form-horizontal" th:action="@{/salvarEncomenda}" method="Post" th:object="${cliente}">
+            <form class="form-horizontal" th:action="@{/cadastrarPedido}" method="Post" th:object="${cliente}">
 				<div th:if="${#fields.hasAnyErrors()}">
 				<div th:each="detailedError : ${#fields.detailedErrors()}">
 					<span th:text="${detailedError.message}"></span>

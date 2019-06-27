@@ -18,13 +18,11 @@ public class Pedido implements Serializable{
 	private long id;
 	@Column(nullable = false, length = 10)
 	@NotEmpty(message = "A data de venda é obrigatória")
-	private String dtvenda;
-	private String temp_est_pedido;
-	private String status_pedido;
+	private String dataVenda;
+	private String tempoEstPedido;
+	private String statusPedido;
 	@ManyToOne
 	private Cliente cliente;
-	@ManyToOne 
-	private Funcionario funcionario;
 	@ManyToOne
 	private Agenda agenda;
 	public long getId() {
@@ -33,23 +31,23 @@ public class Pedido implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getDtvenda() {
-		return dtvenda;
+	public String getDataVenda() {
+		return dataVenda;
 	}
-	public void setDtvenda(String dtvenda) {
-		this.dtvenda = dtvenda;
+	public void setDataVenda(String dataVenda) {
+		this.dataVenda = dataVenda;
 	}
-	public String getTemp_est_pedido() {
-		return temp_est_pedido;
+	public String getTempoEstPedido() {
+		return tempoEstPedido;
 	}
-	public void setTemp_est_pedido(String temp_est_pedido) {
-		this.temp_est_pedido = temp_est_pedido;
+	public void setTempoEstPedido(String tempoEstPedido) {
+		this.tempoEstPedido = tempoEstPedido;
 	}
-	public String getStatus_pedido() {
-		return status_pedido;
+	public String getStatusPedido() {
+		return statusPedido;
 	}
-	public void setStatus_pedido(String status_pedido) {
-		this.status_pedido = status_pedido;
+	public void setStatusPedido(String statusPedido) {
+		this.statusPedido = statusPedido;
 	}
 	public Cliente getCliente() {
 		return cliente;

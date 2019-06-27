@@ -17,7 +17,7 @@ public class Agenda implements Serializable{
 	private long id;
 	@Column(nullable=false, length = 10)
 	@NotEmpty(message = "É obrigatório adicionar uma data livre")
-	private String dtlivre;
+	private String dataLivre;
 	private String tempolivre;
 	public long getId() {
 		return id;
@@ -25,11 +25,11 @@ public class Agenda implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getDtlivre() {
-		return dtlivre;
+	public String getDataLivre() {
+		return dataLivre;
 	}
-	public void setDtlivre(String dtlivre) {
-		this.dtlivre = dtlivre;
+	public void setDataLivre(String dataLivre) {
+		this.dataLivre = dataLivre;
 	}
 	public String getTempolivre() {
 		return tempolivre;

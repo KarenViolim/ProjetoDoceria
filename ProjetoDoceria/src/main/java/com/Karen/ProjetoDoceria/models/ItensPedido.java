@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Itens_Pedido implements Serializable{
+public class ItensPedido implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

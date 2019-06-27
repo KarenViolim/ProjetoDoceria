@@ -21,6 +21,9 @@ public class Cliente extends Pessoa implements Serializable{
 	@Column(nullable = false, length = 80)
 	@NotEmpty(message = "O endereço é obrigatório")
 	private String endereco;
+	public String getRg() {
+		return rg;
+	}
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
