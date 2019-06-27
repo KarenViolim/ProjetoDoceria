@@ -23,7 +23,7 @@ public class AgendaController{
 	
 	@GetMapping("/listarAgenda")
 	public ModelAndView lista() {
-		ModelAndView mv = new ModelAndView("/listarAgenda");
+		ModelAndView mv = new ModelAndView("/agenda");
 		List<Agenda> agenda = repositoryAgenda.findAll();
 		mv.addObject("agenda", agenda);
 		return mv;
@@ -31,7 +31,7 @@ public class AgendaController{
 	
 	@GetMapping("/cadastrarAgenda")
 	public ModelAndView add(Agenda agenda) {
-		ModelAndView mv = new ModelAndView("/cadastrarAgenda");
+		ModelAndView mv = new ModelAndView("/addagenda");
 		mv.addObject("agenda", agenda);
 		return mv;
 	}

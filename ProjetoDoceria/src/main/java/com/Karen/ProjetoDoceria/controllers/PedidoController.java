@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.Karen.ProjetoDoceria.models.Pedido;
+import com.Karen.ProjetoDoceria.repository.AgendaRepository;
 import com.Karen.ProjetoDoceria.repository.ClienteRepository;
 import com.Karen.ProjetoDoceria.repository.PedidoRepository;
 
@@ -25,9 +26,12 @@ public class PedidoController {
 	@Autowired
 	public ClienteRepository repositoryCliente;
 	
+	@Autowired 
+	public AgendaRepository repositoryAgenda;
+	
 	@GetMapping("/listarPedidos")
 	public ModelAndView lista() {
-		ModelAndView mv = new ModelAndView("/listarPedidos");
+		ModelAndView mv = new ModelAndView("/pedido");
 		List<Pedido> pedido = repositoryPedido.findAll();
 		mv.addObject("pedido", pedido);
 		return mv;
@@ -35,9 +39,10 @@ public class PedidoController {
 	
 	@GetMapping("/cadastrarPedido")
 	public ModelAndView add(Pedido pedido) {
-		ModelAndView mv = new ModelAndView("/cadastrarPedido");
+		ModelAndView mv = new ModelAndView("/addpedido");
 		mv.addObject("pedido", pedido);
 		mv.addObject("cliente", repositoryCliente.findAll());
+		mv.addObject("agenda", repositoryAgenda.findAll());
 		return mv;
 	}
 	@GetMapping("/editarPedido/{id}")
