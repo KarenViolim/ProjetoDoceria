@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 public class Agenda implements Serializable{
 	private static final long serialVersionUID = 1L;	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable=false, length = 10)
 	@NotEmpty(message = "É obrigatório adicionar uma data livre")

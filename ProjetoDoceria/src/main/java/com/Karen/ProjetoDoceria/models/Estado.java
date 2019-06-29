@@ -14,7 +14,7 @@ public class Estado implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable = false, length = 50)
 	@NotEmpty(message = "O nome do estado é obrigatório")

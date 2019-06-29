@@ -19,7 +19,7 @@ import com.Karen.ProjetoDoceria.repository.ClienteRepository;
 import com.Karen.ProjetoDoceria.repository.EstadoRepository;
 
 @Controller
-public class EncomendasController {
+public class ClienteController {
 	@Autowired
 	public ClienteRepository repositoryCliente;
 	
@@ -29,36 +29,36 @@ public class EncomendasController {
 	@Autowired
 	public EstadoRepository repository;
 	
-	@GetMapping("/listaEncomendas")
+	@GetMapping("/listarCliente")
 	public ModelAndView lista() {
-		ModelAndView mv = new ModelAndView("/listaEncomendas");
+		ModelAndView mv = new ModelAndView("/cliente");
 		List<Cliente> cliente = repositoryCliente.findAll();
 		mv.addObject("cliente", cliente);
 		return mv;
 	}
 	
-	@GetMapping("/encomendas")
+	@GetMapping("/adicionarCliente")
 	public ModelAndView add(Cliente cliente) {
-		ModelAndView mv = new ModelAndView("/encomendas");
+		ModelAndView mv = new ModelAndView("/addcliente");
 		mv.addObject("cliente", cliente);
 		mv.addObject("cidade", repositoryCidade.findAll());
 		mv.addObject("estado", repository.findAll());
 		return mv;
 	}
-	@GetMapping("/editarEncomenda/{id}")
+	@GetMapping("/editarCliente/{id}")
 	public ModelAndView editar(@PathVariable("id") Long id){
 		Optional<Cliente> cliente = repositoryCliente.findById(id);
 		Cliente cli = cliente.get();
 		return add(cli);
 	}
-	@GetMapping("/removerEncomenda/{id}")
+	@GetMapping("/removerCliente/{id}")
 	public ModelAndView remover(@PathVariable("id") Long id){
 		Optional<Cliente> cliente = repositoryCliente.findById(id);
 		Cliente cli = cliente.get();
 		repositoryCliente.delete(cli);
 		return lista();
 	}
-	@PostMapping("/salvarEncomenda")
+	@PostMapping("/salvarCliente")
 	public ModelAndView salvar(@Valid Cliente cliente, BindingResult result ) {
 		if(result.hasErrors()) {
 		}
