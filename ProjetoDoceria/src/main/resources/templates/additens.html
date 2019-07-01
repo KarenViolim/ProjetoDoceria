@@ -24,7 +24,7 @@
 <body>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="form-horizontal" th:action="@{/salvarAgenda}" method="Post" th:object="${agenda}">
+			<form class="form-horizontal" th:action="@{/salvarItens}" method="Post" th:object="${itens}">
 				<div th:if="${#fields.hasAnyErrors()}">
 				<div th:each="detailedError : ${#fields.detailedErrors()}">
 					<span th:text="${detailedError.message}"></span>
@@ -32,17 +32,35 @@
 				</div>
 				<fieldset>
 				<span class="contact100-form-title">
-					Adicionar Agenda
+					Cadastrar Itens do Pedido
 				</span>
 				<input th:field="*{id}" readOnly="readonly" class="form-control input-md" type="hidden" />
-				<label class="label-input100" for="nome">Data Livre: </label>
+				<label class="label-input100 rs1">Pedido: </label> 
 				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{dataLivre}" class="input100" type="date">
+					<select th:field="*{pedido}" class="form-control">
+						<option value="0">Selecione um Pedido</option>
+						<option th:each="pedido: ${pedido}"
+							th:value="${pedido.id}" th:text="${pedido.dataVenda}"></option>
+					</select>
 					<span class="focus-input100"></span>
 				</div>
-				<label class="label-input100" for="sigla">Tempo Livre: </label>
+				<label class="label-input100 rs1">Produtos: </label> 
 				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{tempolivre}" class="input100" type="time">
+					<select th:field="*{produto}" class="form-control">
+						<option value="0">Selecione um produto: </option>
+						<option th:each="prod: ${produto}"
+							th:value="${prod.id}" th:text="${prod.nome}"></option>
+					</select>
+					<span class="focus-input100"></span>
+				</div>
+								<label class="label-input100" for="nome">Quantidade: </label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input th:field="*{qtde}" class="input100" type="number">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100" for="nome">Preço Total: </label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input th:field="*{precototal}" class="input100" type="number">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="container-contact100-form-btn">

@@ -37,7 +37,7 @@ public class PedidoController {
 		return mv;
 	}
 	
-	@GetMapping("/cadastrarPedido")
+	@GetMapping("/adicionarPedido")
 	public ModelAndView add(Pedido pedido) {
 		ModelAndView mv = new ModelAndView("/addpedido");
 		mv.addObject("pedido", pedido);

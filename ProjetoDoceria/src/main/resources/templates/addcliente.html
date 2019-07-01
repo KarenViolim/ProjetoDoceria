@@ -22,6 +22,7 @@
 </head>
 
 <body>
+	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="form-horizontal" th:action="@{/salvarCliente}" method="Post" th:object="${cliente}">
 				<div th:if="${#fields.hasAnyErrors()}">
@@ -62,7 +63,7 @@
 				<label class="label-input100 rs1">Cidade</label> 
 				<div class="wrap-input100 rs1 validate-input">
 					<select th:field="*{cidade}" class="form-control">
-						<option value="0">Selecione um Estado</option>
+						<option value="0">Selecione uma Cidade</option>
 						<option th:each="cid: ${cidade}"
 							th:value="${cid.id}" th:text="${cid.nome}"></option>
 					</select>
@@ -72,7 +73,7 @@
 				<div class="wrap-input100 rs1 validate-input">
 					<select th:field="*{cidade}" class="form-control">
 						<option value="0">Selecione um Estado</option>
-						<option th:each="est: ${estados}"
+						<option th:each="est: ${estado}"
 							th:value="${est.id}" th:text="${est.nome}"></option>
 					</select>
 					<span class="focus-input100"></span>
@@ -88,7 +89,7 @@
 				</fieldset>
 			</form>
 		</div>
-
+	</div>
 
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="/vendor/animsition/js/animsition.min.js"></script>

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Funcionario extends Pessoa implements Serializable{
@@ -22,7 +23,7 @@ public class Funcionario extends Pessoa implements Serializable{
 	@NotEmpty(message = "O cargo é obrigatório")
 	private String cargo;
 	@Column(nullable = false, length = 8)
-	@NotEmpty(message = "O salário é obrigatório")
+	@NotNull
 	private Double salario;
 	public String getUsuario() {
 		return usuario;

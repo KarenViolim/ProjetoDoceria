@@ -29,7 +29,7 @@ public class AgendaController{
 		return mv;
 	}
 	
-	@GetMapping("/cadastrarAgenda")
+	@GetMapping("/adicionarAgenda")
 	public ModelAndView add(Agenda agenda) {
 		ModelAndView mv = new ModelAndView("/addagenda");
 		mv.addObject("agenda", agenda);
