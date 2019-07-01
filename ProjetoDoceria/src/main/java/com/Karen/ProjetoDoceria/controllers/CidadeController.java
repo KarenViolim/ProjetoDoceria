@@ -2,8 +2,11 @@ package com.Karen.ProjetoDoceria.controllers;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,8 +56,11 @@ public class CidadeController {
 	}
 	
 	@PostMapping("/salvarCidade")
-	public ModelAndView salvar(Cidade cidade) {
-		repositoryCidade.save(cidade);
+	public ModelAndView salvar(@Valid Cidade cidade, BindingResult result ) {
+		if(result.hasErrors()) {
+			
+		}
+		repositoryCidade.saveAndFlush(cidade);
 		return listar();
 	}
 
