@@ -16,9 +16,7 @@ public class ItensPedido implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	@Column(nullable=false, length=14)
-	@NotEmpty(message = "Quantidade obrigatória, mínimo de 50 unidades.")
-	private String qtde;
+	private String quantidade;
 	private String precototal;
 	@ManyToOne
 	private Pedido pedido;
@@ -30,11 +28,11 @@ public class ItensPedido implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getQtde() {
-		return qtde;
+	public String getQuantidade() {
+		return quantidade;
 	}
-	public void setQtde(String qtde) {
-		this.qtde = qtde;
+	public void setQtde(String quantidade) {
+		this.quantidade = quantidade;
 	}
 	public String getPrecototal() {
 		return precototal;

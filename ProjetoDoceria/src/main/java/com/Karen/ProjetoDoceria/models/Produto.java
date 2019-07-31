@@ -14,9 +14,9 @@ public class Produto implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String nome;
-	private String qtdemin;
+	private String quantidademin;
 	private String tempoprod;
-	private String precovenda;
+	private String valorunitario;
 	public long getId() {
 		return id;
 	}
@@ -29,11 +29,11 @@ public class Produto implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getQtdemin() {
-		return qtdemin;
+	public String getQuantidademin() {
+		return quantidademin;
 	}
-	public void setQtdemin(String qtdemin) {
-		this.qtdemin = qtdemin;
+	public void setQuantidademin(String quantidademin) {
+		this.quantidademin = quantidademin;
 	}
 	public String getTempoprod() {
 		return tempoprod;
@@ -41,11 +41,11 @@ public class Produto implements Serializable{
 	public void setTempoprod(String tempoprod) {
 		this.tempoprod = tempoprod;
 	}
-	public String getPrecovenda() {
-		return precovenda;
+	public String getValorunitario() {
+		return valorunitario;
 	}
-	public void setPrecovenda(String precovenda) {
-		this.precovenda = precovenda;
+	public void setValorunitario(String valorunitario) {
+		this.valorunitario = valorunitario;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

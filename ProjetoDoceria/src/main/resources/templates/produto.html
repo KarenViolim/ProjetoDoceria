@@ -35,7 +35,7 @@
 	 			<th>Nome</th>
 	 			<th>Quantidade Mínima</th>
 	 			<th>Tempo de Produção</th>
-	 			<th>Preço de Venda</th>
+	 			<th>Valor Unitário</th>
 	 			<th></th>
 	 		</tr>
 	 	</thead>
@@ -43,9 +43,9 @@
 		<tr th:each="produto : ${produto}">
 			<td th:text="${produto.id}"></td>
  			<td th:text="${produto.nome}"></td>
- 			<td th:text="${produto.qtdemin}"></td>
+ 			<td th:text="${produto.quantidademin}"></td>
   			<td th:text="${produto.tempoprod}"></td>
-  			<td th:text="${produto.precovenda}"></td>
+  			<td th:text="${produto.valorunitario}"></td>
  			<td>
  			<a class="btn btn-warning btn-xs" th:href="@{/editarProduto/{id}(id=${produto.id})}">Editar</a>
  			<a class="btn btn-danger btn-xs" th:href="@{/removerProduto/{id}(id=${produto.id})}">Remover</a>

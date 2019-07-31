@@ -24,46 +24,73 @@
 <body>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="form-horizontal" th:action="@{/salvarProduto}" method="Post" th:object="${produto}">
-				<div th:if="${#fields.hasAnyErrors()}">
-				<div th:each="detailedError : ${#fields.detailedErrors()}">
-					<span th:text="${detailedError.message}"></span>
-				</div>
-				</div>
+			<form class="form-horizontal" th:action="@{/salvarPedido}" method="Post" th:object="${pedido}">
+				<div class="form-group">
+					<fieldset>
+					<div th:if="${#fields.hasAnyErrors()}">
+					<div th:each="detailedError : ${#fields.detailedErrors()}">
+						<span th:text="${detailedError.message}"></span>
+					</div>
+					</div>
+					
+					<span class="contact100-form-title">
+						Cadastro de Vendas
+					</span>
+					<input th:field="*{id}" readOnly="readonly" class="form-control input-md" type="hidden" />
+					<label class="label-input100 rs1">Cliente: </label> 
+					<div class="wrap-input100 rs1 validate-input">
+						<select th:field="*{cliente}" class="form-control">
+							<option value="0">Selecione um Cliente</option>
+							<option th:each="cli: ${cliente}"
+								th:value="${cli.id}" th:text="${cli.nome}"></option>
+						</select>
+						<span class="focus-input100"></span>
+					</div>
+					<label class="label-input100" for="nome">Observação: </label>
+					<div class="wrap-input100 rs1 validate-input">
+						<input th:field="*{statusPedido}" class="input100" type="text">
+						<span class="focus-input100"></span>
+					</div>
+				</fieldset>
+			</div>
+				<h1>Inserir Itens</h1>
+			<div class="form-group" th:object="${itensPedido}">
 				<fieldset>
-				<span class="contact100-form-title">
-					Cadastrar Produtos
-				</span>
-				<input th:field="*{id}" readOnly="readonly" class="form-control input-md" type="hidden" />
-				<label class="label-input100" for="nome">Nome: </label>
+					<div class="form-horizontal" th:object="${itensPedido}">
+						<div th:each="detailedError : ${#fields.detailedErrors()}">
+							<span th:text="${detailedError.message}"></span>
+						</div>
+					</div>
+					<label class="label-input100 rs1">Produto: </label> 
+					<div class="wrap-input100 rs1 validate-input">
+						<select th:field="*{produto}" class="form-control">
+							<option value="0">Selecione um Produto</option>
+							<option th:each="prod: ${produto}"
+								th:value="${prod.id}" th:text="${prod.nome}"></option>
+						</select>
+						<span class="focus-input100"></span>
+					</div>
+				<label class="label-input100" for="nome">Quantidade: </label>
 				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{nome}" class="input100" type="text">
+				<input th:field="*{quantidade}" class="input100" type="text">
 					<span class="focus-input100"></span>
 				</div>
-				<label class="label-input100" for="nome">Quantidade Mínima: </label>
-				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{quantidademin}" class="input100" type="number">
-					<span class="focus-input100"></span>
-				</div>
-				<label class="label-input100" for="nome">Tempo de Produção: </label>
-				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{tempoprod}" class="input100" type="time">
-					<span class="focus-input100"></span>
-				</div>
-				<label class="label-input100" for="nome">Valor Unitário: </label>
-				<div class="wrap-input100 rs1 validate-input">
-					<input th:field="*{valorunitario}" class="input100" type="number">
-					<span class="focus-input100"></span>
-				</div>
+				</fieldset>
+			</div>	
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+				<button type="submit" th:value="item" name="acao" class="contact100-form-btn">
 						<span>
-							Salvar
+							Adicionar Itens
+							<i class="zmdi zmdi-arrow-right m-l-8"></i>
+						</span>
+					</button>
+					<button type="submit" th:value="salvar" name="acao" class="contact100-form-btn">
+						<span>
+							Finalizar Pedido
 							<i class="zmdi zmdi-arrow-right m-l-8"></i>
 						</span>
 					</button>
 				</div>
-				</fieldset>
 			</form>
 		</div>
 	</div>
