@@ -1,6 +1,7 @@
 package com.Karen.ProjetoDoceria.models;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class Produto implements Serializable{
 	private String nome;
 	private String quantidademin;
 	private String tempoprod;
-	private String valorunitario;
+	private BigDecimal valorunitario;
 	public long getId() {
 		return id;
 	}
@@ -41,10 +42,10 @@ public class Produto implements Serializable{
 	public void setTempoprod(String tempoprod) {
 		this.tempoprod = tempoprod;
 	}
-	public String getValorunitario() {
+	public BigDecimal getValorunitario() {
 		return valorunitario;
 	}
-	public void setValorunitario(String valorunitario) {
+	public void setValorunitario(BigDecimal valorunitario) {
 		this.valorunitario = valorunitario;
 	}
 	public static long getSerialversionuid() {

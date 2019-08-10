@@ -2,13 +2,11 @@ package com.Karen.ProjetoDoceria.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class ItensPedido implements Serializable{
@@ -31,7 +29,7 @@ public class ItensPedido implements Serializable{
 	public String getQuantidade() {
 		return quantidade;
 	}
-	public void setQtde(String quantidade) {
+	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
 	}
 	public String getPrecototal() {

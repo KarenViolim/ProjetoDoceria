@@ -76,7 +76,26 @@
 					<span class="focus-input100"></span>
 				</div>
 				</fieldset>
-			</div>	
+			</div>
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
+		 	<thead>
+		 		<tr>
+		 			<th>ID</th>
+		 			<th>Produto</th>
+		 			<th>Quantidade</th>
+		 			<th>Valor Unitário</th>
+		 			<th></th>
+		 		</tr>
+		 	</thead>
+			<tbody>
+			<tr th:each="listaItens : ${listaItens}">
+				<td th:text="${listaItens.produto.id}"></td>
+	 			<td th:text="${listaItens.produto.nome}"></td>
+	  			<td th:text="${listaItens.quantidade}"></td>
+	  			<td th:text="${listaItens.produto.valorunitario}"></td>
+	 		</tr>
+		 	</tbody>
+		 	</table>	
 				<div class="container-contact100-form-btn">
 				<button type="submit" th:value="item" name="acao" class="contact100-form-btn">
 						<span>

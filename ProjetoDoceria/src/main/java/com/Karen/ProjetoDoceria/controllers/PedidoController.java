@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.Karen.ProjetoDoceria.models.ItensPedido;
 import com.Karen.ProjetoDoceria.models.Pedido;
-import com.Karen.ProjetoDoceria.repository.AgendaRepository;
 import com.Karen.ProjetoDoceria.repository.ClienteRepository;
 import com.Karen.ProjetoDoceria.repository.ItensPedidoRepository;
 import com.Karen.ProjetoDoceria.repository.PedidoRepository;
@@ -55,6 +54,7 @@ public class PedidoController {
 		mv.addObject("itensPedido", this.itensPedido);
 		mv.addObject("cliente", repositoryCliente.findAll());
 		mv.addObject("produto", repositoryProduto.findAll());
+		mv.addObject("listaItens", listaItensPedido);
 		return mv;
 	}
 //	@GetMapping("/editarPedido/{id}")

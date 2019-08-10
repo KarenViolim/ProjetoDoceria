@@ -44,7 +44,7 @@
 			<td th:text="${itens.id}"></td>
  			<td th:text="${itens.pedido.dataVenda}"></td>
  			<td th:text="${itens.produto.nome}"></td>
-  			<td th:text="${itens.qtde}"></td>
+  			<td th:text="${itens.quantidade}"></td>
   			<td th:text="${itens.precototal}"></td>
  			<td>
  			<a class="btn btn-warning btn-xs" th:href="@{/editarItens/{id}(id=${itens.id})}">Editar</a>
